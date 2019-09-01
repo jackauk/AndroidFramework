@@ -23,11 +23,11 @@ namespace ja_utils
                 case JNI_EDETACHED:
                     if( GetVM()->AttachCurrentThread(&env,0) != 0)
                     {
-                        throw std::runtime_error("Could not attach current thread");
+                     //   throw std::runtime_error("Could not attach current thread");
                     }
                     break;
                 case JNI_EVERSION:
-                    throw std::runtime_error("Invalid java version");
+                     //   throw std::runtime_error("Invalid java version");
                     break;
             }
         }
@@ -35,10 +35,10 @@ namespace ja_utils
         {
             if (m_bThreadAttached)
             {
-                (GetEnv())->DetachCurrentThread();
+                (GetVM())->DetachCurrentThread();
             }
         }
-    }
+    };
 }
 
 

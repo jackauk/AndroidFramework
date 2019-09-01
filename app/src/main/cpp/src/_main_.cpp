@@ -6,7 +6,7 @@
 #include <string>
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_nativec_MainActivity_stringFromJNImain(
+Java_com_android_nativec_MainActivity_stringFromJNImain(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++. Its first times from _main_.cpp";
