@@ -17,7 +17,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        jni/jni_brigde.cpp
+        jni/PackageUtils/_internal/jni_brigde.cpp
         jni/PackageUtils/package_utils.cpp
         )
 
