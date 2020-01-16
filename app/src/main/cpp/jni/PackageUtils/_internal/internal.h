@@ -26,23 +26,35 @@ namespace fw_utils
         public:
             static void Init();
 
-            static void LoadClasses( JNIEnv*):
+            static void LoadClasses( JNIEnv*);
 
             //Setter method
             static void SetVM(JavaVM*);
             static void SetWindow( ANativeWindow*, int, int);
 
-            static void SetConnection(const fw_utils::helpers::)
+            static void SetConnection(const fw_utils::helpers::ConnectionType&);
+
+            static void SetUserLocation (const fw_utils::helpers::UserLocation&);
+
+            static void PreAppResume();
+            static void PostAppResume();
+
+            static void PreAppPause();
+            static void PostAppPause();
+
+            // Battery info
+            static void SetBatteryInfo(const fw_utils::helpers::BatteryInfo&);
+
+            // Method id caches for function which set up communication between JNI and Java
+
+            static jmethodID    s_getAssetId;
+            static bool         s_bInitialized;
+        };
 
 
 
-
-        }
-
-
-
-    }
-}
+    };
+};
 
 
 

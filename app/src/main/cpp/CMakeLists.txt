@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.4.1)
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
-
+include_directories(jni)
 add_library( # Sets the name of the library.
         native-lib
 
@@ -17,7 +17,9 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        jni/PackageUtils/_internal/jni_brigde.cpp
+        jni/PackageUtils/_internal/jni_bridge.cpp
+        jni/PackageUtils/_internal/internal.cpp
+        jni/PackageUtils/AssetReader/AssetReader.cpp
         jni/PackageUtils/package_utils.cpp
         )
 
@@ -27,7 +29,7 @@ add_library( # Sets the name of the library.
 # you want to add. CMake verifies that the library exists before
 # completing its build.
 
-find_library( # Sets the name of the path variable.
+find_library( # Sets the name of the path variable.include_directories
         log-lib
 
         # Specifies the name of the NDK library that
